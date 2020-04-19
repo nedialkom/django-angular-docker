@@ -3,6 +3,7 @@ version: "3"
 services:
   db:
     image: postgres
+    container_name: db
   dj:
     container_name: dj
     build: django
@@ -13,3 +14,8 @@ services:
       - "80:80"
     depends_on:
       - db
+  ng:
+    container_name: ng
+    build: angular
+    ports:
+      - "8080:80"
